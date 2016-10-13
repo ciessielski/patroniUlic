@@ -11,12 +11,13 @@ import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
-    var locationManager: CLLocationManager!
-    var streetNameLabel: UILabel!
+    @IBOutlet weak var locationManager: CLLocationManager!
+    @IBOutlet weak var streetNameLabel: UILabel!
+    @IBOutlet weak var webView: UIWebView!
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        print("halko")
         
         streetNameLabel = UILabel.init(frame: CGRect(x: 0, y: 22, width: self.view.frame.width, height: 50))
         streetNameLabel.backgroundColor = .blue
@@ -31,7 +32,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         redStrip.backgroundColor = .red
         self.view.addSubview(redStrip)
         
+        webView = UIWebView.init(frame: CGRect(x: 0, y: 84, width: self.view.frame.width, height: self.view.frame.height - 84))
+        self.view.addSubview(webView)
+        
         if (CLLocationManager.locationServicesEnabled()) {
+            
             locationManager = CLLocationManager()
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -40,18 +45,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    func buildURLForGoogleSearch(name: String) -> String {
-        return "https://www.google.pl/#q=\(name)"
+    func loadWebViewContent(gUrl: String) {
+        
+        let gUrlClean = gUrl.replacingOccurrences(of: " ", with: "%20")
+        let url = NSURL (string: gUrlClean)
+        let requestObj = NSURLRequest(url: url as! URL);
+        webView.loadRequest(requestObj as URLRequest)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let location = locations.last! as CLLocation
         location.streetNameWithCompletionBlock { street in
-//            print(street!)
-//            print(location)
             self.streetNameLabel.text = street!
-            print(self.buildURLForGoogleSearch(name: street!))
+            self.loadWebViewContent(gUrl: "https://www.google.pl/#q=\(street!)")
         }
     }
 }

@@ -8,6 +8,8 @@
 
 import XCTest
 
+XCUIDevice.shared().orientation = .faceUp
+XCUIDevice.shared().orientation = .faceUp
 class patroniUlicUITests: XCTestCase {
         
     override func setUp() {
