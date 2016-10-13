@@ -11,9 +11,9 @@ import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
-    @IBOutlet weak var locationManager: CLLocationManager!
-    @IBOutlet weak var streetNameLabel: UILabel!
-    @IBOutlet weak var webView: UIWebView!
+    var locationManager: CLLocationManager!
+    var streetNameLabel: UILabel!
+    var webView: UIWebView!
 
     override func viewDidLoad() {
         
@@ -36,7 +36,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         self.view.addSubview(webView)
         
         if (CLLocationManager.locationServicesEnabled()) {
-            
             locationManager = CLLocationManager()
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -58,7 +57,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let location = locations.last! as CLLocation
         location.streetNameWithCompletionBlock { street in
             self.streetNameLabel.text = street!
-            self.loadWebViewContent(gUrl: "https://www.google.pl/#q=\(street!)")
+            if (UserDefaults.standard.string(forKey: "previousStreet") != street!) {
+                self.loadWebViewContent(gUrl: "https://www.google.pl/#q=\(street!)")
+                UserDefaults.standard.setValue(street!, forKey: "previousStreet")
+            }
         }
     }
 }
