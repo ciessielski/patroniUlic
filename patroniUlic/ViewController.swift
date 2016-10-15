@@ -9,31 +9,24 @@
 import UIKit
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+
+class ViewController: UIViewController {
     
     var locationManager: CLLocationManager!
     var streetNameLabel: UILabel!
     var webView: UIWebView!
+    var refreshButton: UIButton!
+    var displayStreet: String!
+    var currentStreet: String!
 
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        streetNameLabel = UILabel.init(frame: CGRect(x: 0, y: 22, width: self.view.frame.width, height: 50))
-        streetNameLabel.backgroundColor = .blue
-        streetNameLabel.textColor = .white
-        streetNameLabel.font = UIFont.boldSystemFont(ofSize: 30)
-        streetNameLabel.adjustsFontSizeToFitWidth = true
-        streetNameLabel.textAlignment = .center
-        streetNameLabel.text = "Belmonda"
-        self.view.addSubview(streetNameLabel)
-        
-        let redStrip: UIView = UIView.init(frame: CGRect(x: 0, y: 72, width: self.view.frame.width, height: 12))
-        redStrip.backgroundColor = .red
-        self.view.addSubview(redStrip)
-        
-        webView = UIWebView.init(frame: CGRect(x: 0, y: 84, width: self.view.frame.width, height: self.view.frame.height - 84))
-        self.view.addSubview(webView)
+        createStreetNameLabel()
+        createrefreshButton()
+        createRedStrip()
+        createWebView()
         
         if (CLLocationManager.locationServicesEnabled()) {
             locationManager = CLLocationManager()
@@ -44,6 +37,50 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    func createStreetNameLabel() {
+        
+        streetNameLabel = UILabel.init(frame: CGRect(x: 0, y: 22, width: self.view.frame.width, height: 50))
+        streetNameLabel.backgroundColor = UIColor.warsawBlue()
+        streetNameLabel.textColor = .white
+        streetNameLabel.font = UIFont.boldSystemFont(ofSize: 30)
+        streetNameLabel.adjustsFontSizeToFitWidth = true
+        streetNameLabel.textAlignment = .center
+        streetNameLabel.text = "..."
+        self.view.addSubview(streetNameLabel)
+    }
+    
+    func createrefreshButton() {
+        
+        refreshButton = UIButton.init(frame: CGRect(x: self.view.frame.width - 60, y: 30, width: 30, height: 30))
+        refreshButton.setImage(UIImage(named: "refresh_icon"), for: .normal)
+        refreshButton.isHidden = true
+        refreshButton.addTarget(self, action: #selector(ViewController.refreshPressed(_:)), for: UIControlEvents.touchUpInside)
+        self.view.addSubview(refreshButton)
+    }
+    
+    func createRedStrip() {
+        let redStrip: UIView = UIView.init(frame: CGRect(x: 0, y: 72, width: self.view.frame.width, height: 12))
+        redStrip.backgroundColor = UIColor.warsawRed()
+        self.view.addSubview(redStrip)
+    }
+    
+    func createWebView() {
+        webView = UIWebView.init(frame: CGRect(x: 0, y: 84, width: self.view.frame.width, height: self.view.frame.height - 84))
+        self.view.addSubview(webView)
+    }
+    
+    func refreshPressed(_ sender: AnyObject) {
+        print("refresh")
+    }
+    
+    func showRefreshButton() {
+        refreshButton.isHidden = false
+    }
+    
+    func hideRefreshButton() {
+        refreshButton.isHidden = true
+    }
+    
     func loadWebViewContent(gUrl: String) {
         
         let gUrlClean = gUrl.replacingOccurrences(of: " ", with: "%20")
@@ -51,32 +88,28 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let requestObj = NSURLRequest(url: url as! URL);
         webView.loadRequest(requestObj as URLRequest)
     }
+}
+
+//MARK: LocationManager
+extension ViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let location = locations.last! as CLLocation
         location.streetNameWithCompletionBlock { street in
             self.streetNameLabel.text = street!
-            if (UserDefaults.standard.string(forKey: "previousStreet") != street!) {
-                self.loadWebViewContent(gUrl: "https://www.google.pl/#q=\(street!)")
-                UserDefaults.standard.setValue(street!, forKey: "previousStreet")
-            }
-        }
-    }
-}
-
-typealias StreetNameHandler = (String?) -> Void
-
-extension CLLocation {
-    
-    func streetNameWithCompletionBlock(completionBlock: @escaping StreetNameHandler) {
-        
-        CLGeocoder().reverseGeocodeLocation(self) { placemarks, error in
+            print("street: \(street!)")
             
-            if let addressDictionary = placemarks?.first?.addressDictionary, let street = addressDictionary["Thoroughfare"] as? String {
-                completionBlock(street)
+            if (self.previousStreet != self.currentStreet) {
+//                self.loadWebViewContent(gUrl: "https://www.google.pl/#q=\(street!)")
+//                if (self.previousStreet != nil) {
+//                    self.showRefreshButton()
+                self.showRefreshButton()
+                self.previousStreet = street!
+            }
+        else {
+                //                self.hideRefreshButton()
             }
         }
     }
 }
-

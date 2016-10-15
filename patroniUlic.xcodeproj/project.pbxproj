@@ -14,6 +14,7 @@
 		625482651DAC446B00712117 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 625482631DAC446B00712117 /* LaunchScreen.storyboard */; };
 		625482701DAC446B00712117 /* patroniUlicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6254826F1DAC446B00712117 /* patroniUlicTests.swift */; };
 		6254827B1DAC446B00712117 /* patroniUlicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6254827A1DAC446B00712117 /* patroniUlicUITests.swift */; };
+		62F093621DB2B6EE0021FC98 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F093611DB2B6EE0021FC98 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		625482761DAC446B00712117 /* patroniUlicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = patroniUlicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6254827A1DAC446B00712117 /* patroniUlicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = patroniUlicUITests.swift; sourceTree = "<group>"; };
 		6254827C1DAC446B00712117 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62F093611DB2B6EE0021FC98 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				6254825A1DAC446B00712117 /* AppDelegate.swift */,
 				6254825C1DAC446B00712117 /* ViewController.swift */,
+				62F093611DB2B6EE0021FC98 /* Extensions.swift */,
 				6254825E1DAC446B00712117 /* Main.storyboard */,
 				625482611DAC446B00712117 /* Assets.xcassets */,
 				625482631DAC446B00712117 /* LaunchScreen.storyboard */,
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6254825D1DAC446B00712117 /* ViewController.swift in Sources */,
+				62F093621DB2B6EE0021FC98 /* Extensions.swift in Sources */,
 				6254825B1DAC446B00712117 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,6 +518,7 @@
 				625482811DAC446B00712117 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		625482821DAC446B00712117 /* Build configuration list for PBXNativeTarget "patroniUlicTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +527,7 @@
 				625482841DAC446B00712117 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		625482851DAC446B00712117 /* Build configuration list for PBXNativeTarget "patroniUlicUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +536,7 @@
 				625482871DAC446B00712117 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
