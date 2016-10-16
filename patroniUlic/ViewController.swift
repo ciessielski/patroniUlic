@@ -70,7 +70,12 @@ class ViewController: UIViewController {
     }
     
     func refreshPressed(_ sender: AnyObject) {
-        print("refresh")
+        
+        self.streetNameLabel.text = self.currentStreet!
+        self.loadWebViewContent(gUrl: self.currentStreet!)
+        self.displayStreet = self.currentStreet!
+        
+        self.hideRefreshButton()
     }
     
     func showRefreshButton() {
@@ -97,19 +102,17 @@ extension ViewController: CLLocationManagerDelegate {
         
         let location = locations.last! as CLLocation
         location.streetNameWithCompletionBlock { street in
-            self.streetNameLabel.text = street!
-            print("street: \(street!)")
             
-            if (self.previousStreet != self.currentStreet) {
-//                self.loadWebViewContent(gUrl: "https://www.google.pl/#q=\(street!)")
-//                if (self.previousStreet != nil) {
-//                    self.showRefreshButton()
+            if (self.currentStreet == nil && self.displayStreet == nil) {
+                self.currentStreet = street!
+                self.displayStreet = self.currentStreet
+                self.streetNameLabel.text = self.displayStreet!
+                self.loadWebViewContent(gUrl: self.displayStreet!)
+            } else if (self.displayStreet != self.currentStreet) {
                 self.showRefreshButton()
-                self.previousStreet = street!
             }
-        else {
-                //                self.hideRefreshButton()
-            }
+            
+            self.currentStreet = street!
         }
     }
 }
