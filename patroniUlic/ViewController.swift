@@ -23,6 +23,8 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         
+        print("view did load")
+        
         createStreetNameLabel()
         createrefreshButton()
         createRedStrip()
@@ -39,8 +41,15 @@ class ViewController: UIViewController {
     
     func createStreetNameLabel() {
         
+        let statusBarBCG = UIView.init(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 22))
+        statusBarBCG.backgroundColor = UIColor.warsawBlue()
+        self.view.addSubview(statusBarBCG)
+        
+        let labelBCG = UIView.init(frame: CGRect(x: 0, y: 22, width: self.view.frame.width, height: 50))
+        labelBCG.backgroundColor = UIColor.warsawBlue()
+        self.view.addSubview(labelBCG)
+        
         streetNameLabel = UILabel.init(frame: CGRect(x: 0, y: 22, width: self.view.frame.width, height: 50))
-        streetNameLabel.backgroundColor = UIColor.warsawBlue()
         streetNameLabel.textColor = .white
         streetNameLabel.font = UIFont.boldSystemFont(ofSize: 30)
         streetNameLabel.adjustsFontSizeToFitWidth = true
@@ -51,7 +60,7 @@ class ViewController: UIViewController {
     
     func createrefreshButton() {
         
-        refreshButton = UIButton.init(frame: CGRect(x: self.view.frame.width - 60, y: 30, width: 30, height: 30))
+        refreshButton = UIButton.init(frame: CGRect(x: self.view.frame.width - 35, y: 32, width: 30, height: 30))
         refreshButton.setImage(UIImage(named: "refresh_icon"), for: .normal)
         refreshButton.isHidden = true
         refreshButton.addTarget(self, action: #selector(ViewController.refreshPressed(_:)), for: UIControlEvents.touchUpInside)
@@ -66,6 +75,7 @@ class ViewController: UIViewController {
     
     func createWebView() {
         webView = UIWebView.init(frame: CGRect(x: 0, y: 84, width: self.view.frame.width, height: self.view.frame.height - 84))
+        webView.backgroundColor = UIColor.warsawRed()   
         self.view.addSubview(webView)
     }
     
@@ -80,20 +90,31 @@ class ViewController: UIViewController {
     
     func showRefreshButton() {
         refreshButton.isHidden = false
+        
+        streetNameLabel.frame = CGRect(x: 0, y: 22, width: self.view.frame.width - 40, height: 50)
     }
     
     func hideRefreshButton() {
+        
+        streetNameLabel.frame = CGRect(x: 0, y: 22, width: self.view.frame.width, height: 50)
         refreshButton.isHidden = true
     }
     
     func loadWebViewContent(gUrl: String) {
         
-        let gUrlClean = gUrl.replacingOccurrences(of: " ", with: "%20")
+        var gUrlClean = gUrl.replacingOccurrences(of: " ", with: "%20")
+        gUrlClean = "https://www.google.pl/#q=" + gUrlClean
         let url = NSURL (string: gUrlClean)
+        print("load web view url: \(url)")
         let requestObj = NSURLRequest(url: url as! URL);
         webView.loadRequest(requestObj as URLRequest)
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }
+
 
 //MARK: LocationManager
 extension ViewController: CLLocationManagerDelegate {
