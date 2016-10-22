@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3FB9842E408D813BD5CF1B5A /* Pods_Patroni_Ulic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE068AA4788A2A441D4F15EF /* Pods_Patroni_Ulic.framework */; };
+		620D432E1DBBE13100E2550B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 620D432D1DBBE13100E2550B /* Launch Screen.storyboard */; };
 		6254825B1DAC446B00712117 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6254825A1DAC446B00712117 /* AppDelegate.swift */; };
 		6254825D1DAC446B00712117 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6254825C1DAC446B00712117 /* MainViewController.swift */; };
 		625482621DAC446B00712117 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 625482611DAC446B00712117 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 		25D80B3B410C7AC54E6A17EC /* Pods-Patroni Ulic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Patroni Ulic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Patroni Ulic/Pods-Patroni Ulic.debug.xcconfig"; sourceTree = "<group>"; };
 		2663D11BD7D9EC9048ED0D4F /* Pods_patroniUlicUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_patroniUlicUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B53E0995E0B52A31525E4FC /* Pods-patroniUlic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-patroniUlic.release.xcconfig"; path = "Pods/Target Support Files/Pods-patroniUlic/Pods-patroniUlic.release.xcconfig"; sourceTree = "<group>"; };
+		620D432D1DBBE13100E2550B /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "../Launch Screen.storyboard"; sourceTree = "<group>"; };
 		625482571DAC446B00712117 /* Patroni Ulic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Patroni Ulic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6254825A1DAC446B00712117 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6254825C1DAC446B00712117 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				6254825C1DAC446B00712117 /* MainViewController.swift */,
 				62F093611DB2B6EE0021FC98 /* Extensions.swift */,
 				625482611DAC446B00712117 /* Assets.xcassets */,
+				620D432D1DBBE13100E2550B /* Launch Screen.storyboard */,
 				625482661DAC446B00712117 /* Info.plist */,
 			);
 			path = patroniUlic;
@@ -269,6 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				620D432E1DBBE13100E2550B /* Launch Screen.storyboard in Resources */,
 				625482621DAC446B00712117 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,6 +490,7 @@
 					"$(PROJECT_DIR)/patroniUlic/HockeySDK.embeddedframework",
 				);
 				INFOPLIST_FILE = patroniUlic/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pjm.patroniUlic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -505,6 +510,7 @@
 					"$(PROJECT_DIR)/patroniUlic/HockeySDK.embeddedframework",
 				);
 				INFOPLIST_FILE = patroniUlic/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pjm.patroniUlic;
 				PRODUCT_NAME = "$(TARGET_NAME)";

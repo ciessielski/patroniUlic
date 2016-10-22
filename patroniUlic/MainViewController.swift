@@ -148,7 +148,7 @@ class MainViewController: UIViewController, UIWebViewDelegate {
     
     func test() {
         
-        let testNames = ["Adama Mickiewicza", "Elizy Orzeszkowej", "Andrzeja Wajdy", "Jana Pawła II", "Maurycego Mochnackiego", "Gabrieli Zapolskiej", "Franciszka Bohomolca", "Stanisława Tołpy", "Stefana Jaracza", "Józefa Supińskiego", "Marii Curie-Skłodowskiej", "Marii Skołodowskiej-Curie", "Jana Matejki", "Plac Zbawiciela", "św. Mikołaja", "św. Maksymiliana Kolbego"]
+        let testNames = ["Adama Mickiewicza", "Elizy Orzeszkowej", "Andrzeja Wajdy", "Jana Pawła II", "Maurycego Mochnackiego", "Gabrieli Zapolskiej", "Franciszka Bohomolca", "Stanisława Tołpy", "Stefana Jaracza", "Józefa Supińskiego", "Marii Curie-Skłodowskiej", "Marii Skołodowskiej-Curie", "Jana Matejki", "Plac Zbawiciela", "św. Mikołaja", "św. Maksymiliana Kolbego", "Plac Konstytucji", "Aleja Karkonowska"]
         
         for name in testNames {
             print(String().nominativusFrom(genetivus: name))

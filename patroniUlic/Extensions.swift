@@ -63,9 +63,21 @@ extension String {
     
     func nominativusFrom(genetivus: String) -> String {
         
-        if (genetivus.contains(" ")) {
-            
-            let nom = genetivus.replacingOccurrences(of: " ", with: "_") as NSString
+        var nom = genetivus.replacingOccurrences(of: " ", with: "_") as NSString
+        
+        if (nom.hasPrefix("Plac_")) {
+            nom = nom.replacingOccurrences(of: "Plac_", with: "") as NSString
+        }
+        
+        if (nom.hasPrefix("Aleja_")) {
+            nom = nom.replacingOccurrences(of: "Aleja_", with: "") as NSString
+        }
+        
+        if (nom.hasPrefix("św._")) {
+            nom = nom.replacingOccurrences(of: "św._", with: "") as NSString
+        }
+
+        if (nom.contains("_")) {
             
             var name = nom.substring(to: nom.range(of: "_").location) as NSString
             var surname = nom.substring(from: nom.range(of: "_").location + 1) as NSString
@@ -91,8 +103,13 @@ extension String {
             }
             
             if (name.hasSuffix("ego")) {
+                name = name.replacingOccurrences(of: "olbego", with: "olbe") as NSString
                 name = name.replacingOccurrences(of: "iego", with: "") as NSString
                 name = name.replacingOccurrences(of: "ego", with: "y") as NSString
+            }
+            
+            if (surname.hasSuffix("olbego")) {
+                surname = surname.replacingOccurrences(of: "olbego", with: "olbe") as NSString
             }
             
             if (surname.hasSuffix("ego")) {
