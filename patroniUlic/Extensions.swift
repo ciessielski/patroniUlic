@@ -9,7 +9,6 @@
 import UIKit
 import CoreLocation
 
-
 typealias StreetNameHandler = (String?) -> Void
 
 extension CLLocation {

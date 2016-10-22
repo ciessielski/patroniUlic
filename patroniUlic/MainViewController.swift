@@ -165,7 +165,7 @@ extension MainViewController: CLLocationManagerDelegate {
         let location = locations.last! as CLLocation
         location.streetNameWithCompletionBlock { street in
             
-            print(street!)
+//            print(street!) //uncomment for testing location
             if (self.currentStreet == nil && self.displayStreet == nil) {
                 self.currentStreet = street!
                 self.displayStreet = self.currentStreet

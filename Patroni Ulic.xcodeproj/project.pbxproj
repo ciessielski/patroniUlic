@@ -7,17 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1589A0FCCDCA4C089D22B097 /* Pods_patroniUlicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA8F459939AB3B8D3C173BB0 /* Pods_patroniUlicTests.framework */; };
+		3FB9842E408D813BD5CF1B5A /* Pods_Patroni_Ulic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE068AA4788A2A441D4F15EF /* Pods_Patroni_Ulic.framework */; };
 		6254825B1DAC446B00712117 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6254825A1DAC446B00712117 /* AppDelegate.swift */; };
 		6254825D1DAC446B00712117 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6254825C1DAC446B00712117 /* MainViewController.swift */; };
 		625482621DAC446B00712117 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 625482611DAC446B00712117 /* Assets.xcassets */; };
 		625482701DAC446B00712117 /* patroniUlicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6254826F1DAC446B00712117 /* patroniUlicTests.swift */; };
 		6254827B1DAC446B00712117 /* patroniUlicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6254827A1DAC446B00712117 /* patroniUlicUITests.swift */; };
 		62F093621DB2B6EE0021FC98 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F093611DB2B6EE0021FC98 /* Extensions.swift */; };
-		62F093661DB592AA0021FC98 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62F093641DB592AA0021FC98 /* HockeySDK.framework */; };
-		62F093671DB592AA0021FC98 /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 62F093651DB592AA0021FC98 /* HockeySDKResources.bundle */; };
-		B04A38ADC1395FC050199C44 /* Pods_patroniUlicUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2663D11BD7D9EC9048ED0D4F /* Pods_patroniUlicUITests.framework */; };
-		CEB84E6323A6133943DA3F08 /* Pods_patroniUlic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0A4081268887353CC035A81 /* Pods_patroniUlic.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1DC7B5F5A7537CFD1F327362 /* Pods-Patroni Ulic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Patroni Ulic.release.xcconfig"; path = "Pods/Target Support Files/Pods-Patroni Ulic/Pods-Patroni Ulic.release.xcconfig"; sourceTree = "<group>"; };
+		25D80B3B410C7AC54E6A17EC /* Pods-Patroni Ulic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Patroni Ulic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Patroni Ulic/Pods-Patroni Ulic.debug.xcconfig"; sourceTree = "<group>"; };
 		2663D11BD7D9EC9048ED0D4F /* Pods_patroniUlicUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_patroniUlicUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		27301EEC73B42869F30BA50B /* Pods-patroniUlicTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-patroniUlicTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-patroniUlicTests/Pods-patroniUlicTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3B53E0995E0B52A31525E4FC /* Pods-patroniUlic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-patroniUlic.release.xcconfig"; path = "Pods/Target Support Files/Pods-patroniUlic/Pods-patroniUlic.release.xcconfig"; sourceTree = "<group>"; };
 		625482571DAC446B00712117 /* Patroni Ulic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Patroni Ulic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6254825A1DAC446B00712117 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,14 +50,10 @@
 		6254827A1DAC446B00712117 /* patroniUlicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = patroniUlicUITests.swift; sourceTree = "<group>"; };
 		6254827C1DAC446B00712117 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62F093611DB2B6EE0021FC98 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		62F093641DB592AA0021FC98 /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
-		62F093651DB592AA0021FC98 /* HockeySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HockeySDKResources.bundle; sourceTree = "<group>"; };
-		67E313EE899E9BB4B3DB6DFD /* Pods-patroniUlicUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-patroniUlicUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-patroniUlicUITests/Pods-patroniUlicUITests.release.xcconfig"; sourceTree = "<group>"; };
-		83AA00A6A8A9D91D84612AC3 /* Pods-patroniUlicUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-patroniUlicUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-patroniUlicUITests/Pods-patroniUlicUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AE068AA4788A2A441D4F15EF /* Pods_Patroni_Ulic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Patroni_Ulic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CC4C27B8C58DD450FD114A /* Pods-patroniUlic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-patroniUlic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-patroniUlic/Pods-patroniUlic.debug.xcconfig"; sourceTree = "<group>"; };
 		D0A4081268887353CC035A81 /* Pods_patroniUlic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_patroniUlic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA8F459939AB3B8D3C173BB0 /* Pods_patroniUlicTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_patroniUlicTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EF1BF85F5A73756A9CE5C08D /* Pods-patroniUlicTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-patroniUlicTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-patroniUlicTests/Pods-patroniUlicTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,8 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62F093661DB592AA0021FC98 /* HockeySDK.framework in Frameworks */,
-				CEB84E6323A6133943DA3F08 /* Pods_patroniUlic.framework in Frameworks */,
+				3FB9842E408D813BD5CF1B5A /* Pods_Patroni_Ulic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,7 +69,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1589A0FCCDCA4C089D22B097 /* Pods_patroniUlicTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +76,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B04A38ADC1395FC050199C44 /* Pods_patroniUlicUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,10 +87,8 @@
 			children = (
 				C4CC4C27B8C58DD450FD114A /* Pods-patroniUlic.debug.xcconfig */,
 				3B53E0995E0B52A31525E4FC /* Pods-patroniUlic.release.xcconfig */,
-				27301EEC73B42869F30BA50B /* Pods-patroniUlicTests.debug.xcconfig */,
-				EF1BF85F5A73756A9CE5C08D /* Pods-patroniUlicTests.release.xcconfig */,
-				83AA00A6A8A9D91D84612AC3 /* Pods-patroniUlicUITests.debug.xcconfig */,
-				67E313EE899E9BB4B3DB6DFD /* Pods-patroniUlicUITests.release.xcconfig */,
+				25D80B3B410C7AC54E6A17EC /* Pods-Patroni Ulic.debug.xcconfig */,
+				1DC7B5F5A7537CFD1F327362 /* Pods-Patroni Ulic.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -135,7 +123,6 @@
 				62F093611DB2B6EE0021FC98 /* Extensions.swift */,
 				625482611DAC446B00712117 /* Assets.xcassets */,
 				625482661DAC446B00712117 /* Info.plist */,
-				62F093631DB592AA0021FC98 /* HockeySDK.embeddedframework */,
 			);
 			path = patroniUlic;
 			sourceTree = "<group>";
@@ -158,21 +145,13 @@
 			path = patroniUlicUITests;
 			sourceTree = "<group>";
 		};
-		62F093631DB592AA0021FC98 /* HockeySDK.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				62F093641DB592AA0021FC98 /* HockeySDK.framework */,
-				62F093651DB592AA0021FC98 /* HockeySDKResources.bundle */,
-			);
-			path = HockeySDK.embeddedframework;
-			sourceTree = "<group>";
-		};
 		AE831012D9458D9FBB8A668B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				D0A4081268887353CC035A81 /* Pods_patroniUlic.framework */,
 				EA8F459939AB3B8D3C173BB0 /* Pods_patroniUlicTests.framework */,
 				2663D11BD7D9EC9048ED0D4F /* Pods_patroniUlicUITests.framework */,
+				AE068AA4788A2A441D4F15EF /* Pods_Patroni_Ulic.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -204,12 +183,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 625482821DAC446B00712117 /* Build configuration list for PBXNativeTarget "Patroni UlicTests" */;
 			buildPhases = (
-				F7F99D70E197F2FB056D867F /* 📦 Check Pods Manifest.lock */,
 				625482671DAC446B00712117 /* Sources */,
 				625482681DAC446B00712117 /* Frameworks */,
 				625482691DAC446B00712117 /* Resources */,
-				85E6E33F82BC414CE4C7DDD8 /* 📦 Embed Pods Frameworks */,
-				008795C2DE845BA04F455D26 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -225,11 +201,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 625482851DAC446B00712117 /* Build configuration list for PBXNativeTarget "Patroni UlicUITests" */;
 			buildPhases = (
-				A9111B2CF9FFA7F4DF4E5793 /* 📦 Check Pods Manifest.lock */,
 				625482721DAC446B00712117 /* Sources */,
 				625482731DAC446B00712117 /* Frameworks */,
 				625482741DAC446B00712117 /* Resources */,
-				82EF1581A975C43DC0465876 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -295,7 +269,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62F093671DB592AA0021FC98 /* HockeySDKResources.bundle in Resources */,
 				625482621DAC446B00712117 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,21 +290,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		008795C2DE845BA04F455D26 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-patroniUlicTests/Pods-patroniUlicTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		1894F0465132A3997733E5B4 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -344,7 +302,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-patroniUlic/Pods-patroniUlic-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Patroni Ulic/Pods-Patroni Ulic-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		76B2BAD15465DC9E6830C5D1 /* 📦 Copy Pods Resources */ = {
@@ -359,70 +317,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-patroniUlic/Pods-patroniUlic-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		82EF1581A975C43DC0465876 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-patroniUlicUITests/Pods-patroniUlicUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		85E6E33F82BC414CE4C7DDD8 /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-patroniUlicTests/Pods-patroniUlicTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A9111B2CF9FFA7F4DF4E5793 /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Patroni Ulic/Pods-Patroni Ulic-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C65434319FFAD4B24B472B6A /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		F7F99D70E197F2FB056D867F /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -579,7 +477,7 @@
 		};
 		625482801DAC446B00712117 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C4CC4C27B8C58DD450FD114A /* Pods-patroniUlic.debug.xcconfig */;
+			baseConfigurationReference = 25D80B3B410C7AC54E6A17EC /* Pods-Patroni Ulic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4V9FNC79Z9;
@@ -592,12 +490,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pjm.patroniUlic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		625482811DAC446B00712117 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B53E0995E0B52A31525E4FC /* Pods-patroniUlic.release.xcconfig */;
+			baseConfigurationReference = 1DC7B5F5A7537CFD1F327362 /* Pods-Patroni Ulic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4V9FNC79Z9;
@@ -610,12 +509,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pjm.patroniUlic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		625482831DAC446B00712117 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 27301EEC73B42869F30BA50B /* Pods-patroniUlicTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -631,7 +530,6 @@
 		};
 		625482841DAC446B00712117 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EF1BF85F5A73756A9CE5C08D /* Pods-patroniUlicTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -647,7 +545,6 @@
 		};
 		625482861DAC446B00712117 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 83AA00A6A8A9D91D84612AC3 /* Pods-patroniUlicUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 4V9FNC79Z9;
@@ -662,7 +559,6 @@
 		};
 		625482871DAC446B00712117 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 67E313EE899E9BB4B3DB6DFD /* Pods-patroniUlicUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 4V9FNC79Z9;
