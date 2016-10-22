@@ -9,10 +9,8 @@
 /* Begin PBXBuildFile section */
 		1589A0FCCDCA4C089D22B097 /* Pods_patroniUlicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA8F459939AB3B8D3C173BB0 /* Pods_patroniUlicTests.framework */; };
 		6254825B1DAC446B00712117 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6254825A1DAC446B00712117 /* AppDelegate.swift */; };
-		6254825D1DAC446B00712117 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6254825C1DAC446B00712117 /* ViewController.swift */; };
-		625482601DAC446B00712117 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6254825E1DAC446B00712117 /* Main.storyboard */; };
+		6254825D1DAC446B00712117 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6254825C1DAC446B00712117 /* MainViewController.swift */; };
 		625482621DAC446B00712117 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 625482611DAC446B00712117 /* Assets.xcassets */; };
-		625482651DAC446B00712117 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 625482631DAC446B00712117 /* LaunchScreen.storyboard */; };
 		625482701DAC446B00712117 /* patroniUlicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6254826F1DAC446B00712117 /* patroniUlicTests.swift */; };
 		6254827B1DAC446B00712117 /* patroniUlicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6254827A1DAC446B00712117 /* patroniUlicUITests.swift */; };
 		62F093621DB2B6EE0021FC98 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F093611DB2B6EE0021FC98 /* Extensions.swift */; };
@@ -45,10 +43,8 @@
 		3B53E0995E0B52A31525E4FC /* Pods-patroniUlic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-patroniUlic.release.xcconfig"; path = "Pods/Target Support Files/Pods-patroniUlic/Pods-patroniUlic.release.xcconfig"; sourceTree = "<group>"; };
 		625482571DAC446B00712117 /* Patroni Ulic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Patroni Ulic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6254825A1DAC446B00712117 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6254825C1DAC446B00712117 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6254825F1DAC446B00712117 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6254825C1DAC446B00712117 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		625482611DAC446B00712117 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		625482641DAC446B00712117 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		625482661DAC446B00712117 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6254826B1DAC446B00712117 /* Patroni UlicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Patroni UlicTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6254826F1DAC446B00712117 /* patroniUlicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = patroniUlicTests.swift; sourceTree = "<group>"; };
@@ -135,11 +131,9 @@
 			isa = PBXGroup;
 			children = (
 				6254825A1DAC446B00712117 /* AppDelegate.swift */,
-				6254825C1DAC446B00712117 /* ViewController.swift */,
+				6254825C1DAC446B00712117 /* MainViewController.swift */,
 				62F093611DB2B6EE0021FC98 /* Extensions.swift */,
-				6254825E1DAC446B00712117 /* Main.storyboard */,
 				625482611DAC446B00712117 /* Assets.xcassets */,
-				625482631DAC446B00712117 /* LaunchScreen.storyboard */,
 				625482661DAC446B00712117 /* Info.plist */,
 				62F093631DB592AA0021FC98 /* HockeySDK.embeddedframework */,
 			);
@@ -301,10 +295,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				625482651DAC446B00712117 /* LaunchScreen.storyboard in Resources */,
 				62F093671DB592AA0021FC98 /* HockeySDKResources.bundle in Resources */,
 				625482621DAC446B00712117 /* Assets.xcassets in Resources */,
-				625482601DAC446B00712117 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,7 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6254825D1DAC446B00712117 /* ViewController.swift in Sources */,
+				6254825D1DAC446B00712117 /* MainViewController.swift in Sources */,
 				62F093621DB2B6EE0021FC98 /* Extensions.swift in Sources */,
 				6254825B1DAC446B00712117 /* AppDelegate.swift in Sources */,
 			);
@@ -488,25 +480,6 @@
 			targetProxy = 625482771DAC446B00712117 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		6254825E1DAC446B00712117 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6254825F1DAC446B00712117 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		625482631DAC446B00712117 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				625482641DAC446B00712117 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		6254827D1DAC446B00712117 /* Debug */ = {

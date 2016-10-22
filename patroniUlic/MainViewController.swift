@@ -11,7 +11,7 @@ import CoreLocation
 import GoogleMobileAds
 
 
-class ViewController: UIViewController, UIWebViewDelegate {
+class MainViewController: UIViewController, UIWebViewDelegate {
     
     var locationManager: CLLocationManager!
     var streetNameLabel: UILabel!
@@ -68,7 +68,7 @@ class ViewController: UIViewController, UIWebViewDelegate {
         refreshButton = UIButton.init(frame: CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.width, height: 50))
         refreshButton.backgroundColor = UIColor.warsawRed()
         refreshButton.setImage(UIImage(named: "refresh_icon"), for: .normal)
-        refreshButton.addTarget(self, action: #selector(ViewController.refreshPressed(_:)), for: UIControlEvents.touchUpInside)
+        refreshButton.addTarget(self, action: #selector(MainViewController.refreshPressed(_:)), for: UIControlEvents.touchUpInside)
         self.view.addSubview(refreshButton)
     }
     
@@ -158,7 +158,7 @@ class ViewController: UIViewController, UIWebViewDelegate {
 
 
 //MARK: LocationManager
-extension ViewController: CLLocationManagerDelegate {
+extension MainViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
