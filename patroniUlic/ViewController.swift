@@ -11,7 +11,7 @@ import CoreLocation
 import GoogleMobileAds
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIWebViewDelegate {
     
     var locationManager: CLLocationManager!
     var streetNameLabel: UILabel!
@@ -20,22 +20,20 @@ class ViewController: UIViewController {
     var refreshButton: UIButton!
     var displayStreet: String!
     var currentStreet: String!
+    var refreshButtonDisplayed: Bool = false
     
-    var testNames: [String] = ["Adama Mickiewicza", "Elizy Orzeszkowej", "Andrzeja Wajdy", "Jana Pawła II", "Maurycego Mochnackiego", "Gabrieli Zapolskiej", "Franciszka Bohomolca", "Stanisława Tołpy", "Stefana Jaracza", "Józefa Supińskiego"]
 
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-        for name in testNames {
-            print(nominativusFrom(genetivus: name))
-        }
+    
+//        self.test() //uncomment for testing new street names
         
         createStreetNameLabel()
-        createrefreshButton()
-        createRedStripe()
         createWebView()
+        createRedStripe()
         createAdView()
+        createRefreshButton()
         
         if (CLLocationManager.locationServicesEnabled()) {
             locationManager = CLLocationManager()
@@ -52,11 +50,11 @@ class ViewController: UIViewController {
         statusBarBCG.backgroundColor = UIColor.warsawBlue()
         self.view.addSubview(statusBarBCG)
         
-        let labelBCG = UIView.init(frame: CGRect(x: 0, y: 22, width: self.view.frame.width, height: 50))
+        let labelBCG = UIView.init(frame: CGRect(x: 0 , y: 22, width: self.view.frame.width, height: 50))
         labelBCG.backgroundColor = UIColor.warsawBlue()
         self.view.addSubview(labelBCG)
         
-        streetNameLabel = UILabel.init(frame: CGRect(x: 0, y: 22, width: self.view.frame.width, height: 50))
+        streetNameLabel = UILabel.init(frame: CGRect(x: 10, y: 22, width: self.view.frame.width - 20, height: 50))
         streetNameLabel.textColor = .white
         streetNameLabel.font = UIFont.boldSystemFont(ofSize: 30)
         streetNameLabel.adjustsFontSizeToFitWidth = true
@@ -65,11 +63,11 @@ class ViewController: UIViewController {
         self.view.addSubview(streetNameLabel)
     }
     
-    func createrefreshButton() {
+    func createRefreshButton() {
         
-        refreshButton = UIButton.init(frame: CGRect(x: self.view.frame.width - 35, y: 32, width: 30, height: 30))
+        refreshButton = UIButton.init(frame: CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.width, height: 50))
+        refreshButton.backgroundColor = UIColor.warsawRed()
         refreshButton.setImage(UIImage(named: "refresh_icon"), for: .normal)
-        refreshButton.isHidden = true
         refreshButton.addTarget(self, action: #selector(ViewController.refreshPressed(_:)), for: UIControlEvents.touchUpInside)
         self.view.addSubview(refreshButton)
     }
@@ -104,29 +102,32 @@ class ViewController: UIViewController {
         self.streetNameLabel.text = self.currentStreet!
         self.loadWebViewContent(search: self.currentStreet!)
         self.displayStreet = self.currentStreet!
-        
+    
         self.hideRefreshButton()
     }
     
     func showRefreshButton() {
         
+        refreshButtonDisplayed = true
         UIView.animate(withDuration: 1, animations: {
-            self.refreshButton.isHidden = false
-            self.refreshButton.alpha = 1
+            
+            self.adView.center.y += 50
+            self.refreshButton.center.y -= 50
         })
     }
     
     func hideRefreshButton() {
         
+        refreshButtonDisplayed = false
         UIView.animate(withDuration: 1, animations: {
-            self.refreshButton.alpha = 0
-            self.refreshButton.isHidden = true
+                self.adView.center.y -= 50
+                self.refreshButton.center.y += 50
         })
     }
     
     func loadWebViewContent(search: String) {
         
-        let wikiSearch = "http://pl.wikipedia.org/wiki/" + nominativusFrom(genetivus: search)
+        let wikiSearch = "http://pl.wikipedia.org/wiki/" + String().nominativusFrom(genetivus: search)
         var url = NSURL (string: wikiSearch)
         
         if (wikiSearch == "http://pl.wikipedia.org/wiki/") {
@@ -141,72 +142,17 @@ class ViewController: UIViewController {
         }
     }
     
-    func nominativusFrom(genetivus: String) -> String {
-        
-        if (genetivus.contains(" ")) {
-            
-            let nom = genetivus.replacingOccurrences(of: " ", with: "_") as NSString
-        
-            var name = nom.substring(to: nom.range(of: "_").location) as NSString
-            var surname = nom.substring(from: nom.range(of: "_").location + 1) as NSString
-            
-            if (name.hasSuffix("wła")) {
-                name = name.replacingOccurrences(of: "wła", with: "weł") as NSString
-            }
-            
-            if (name.hasSuffix("ka")) {
-                name = name.replacingOccurrences(of: "ka", with: "ek") as NSString
-            }
-            
-            if (name.hasSuffix("a")) {
-                
-                name = name.substring(to: name.length - 1) as NSString
-            }
-            
-            if (name.hasSuffix("y") || name.hasSuffix("i") ) {
-                name = name.substring(to: name.length - 1).appending("a") as NSString
-            }
-            
-            if (name.hasSuffix("ego")) {
-                
-                name = name.replacingOccurrences(of: "iego", with: "") as NSString
-                name = name.replacingOccurrences(of: "ego", with: "y") as NSString
-            }
-            
-            if (surname.hasSuffix("ego")) {
-                
-                surname = surname.replacingOccurrences(of: "iego", with: "i") as NSString
-                surname = surname.replacingOccurrences(of: "ego", with: "y") as NSString
-            }
-            
-            if (surname.hasPrefix("Pawła")) {
-                surname = surname.replacingOccurrences(of: "Pawła", with: "Paweł") as NSString
-            }
-            
-            if (surname.hasSuffix("ca")) {
-                surname = surname.replacingOccurrences(of: "ca", with: "ec") as NSString
-            }
-            
-            if (surname.hasSuffix("a")) {
-                surname = surname.substring(to: surname.length - 1) as NSString
-            } else if (surname.hasSuffix("y")) {
-                surname = surname.substring(to: surname.length - 1).appending("a") as NSString
-            }
-            
-            if (surname.hasSuffix("iej")) {
-                surname = surname.replacingOccurrences(of: "iej", with: "a") as NSString
-            }
-            
-            if (surname.hasSuffix("ej")) {
-                surname = surname.replacingOccurrences(of: "ej", with: "a") as NSString
-            }
-            
-            return (name as String) + "_" + (surname as String)
-        } else { return ""}
-    }
-    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    func test() {
+        
+        let testNames = ["Adama Mickiewicza", "Elizy Orzeszkowej", "Andrzeja Wajdy", "Jana Pawła II", "Maurycego Mochnackiego", "Gabrieli Zapolskiej", "Franciszka Bohomolca", "Stanisława Tołpy", "Stefana Jaracza", "Józefa Supińskiego", "Marii Curie-Skłodowskiej", "Marii Skołodowskiej-Curie", "Jana Matejki", "Plac Zbawiciela", "św. Mikołaja", "św. Maksymiliana Kolbego"]
+        
+        for name in testNames {
+            print(String().nominativusFrom(genetivus: name))
+        }
     }
 }
 
@@ -219,16 +165,15 @@ extension ViewController: CLLocationManagerDelegate {
         let location = locations.last! as CLLocation
         location.streetNameWithCompletionBlock { street in
             
-//            print("loc: \(street!)")
-            
+            print(street!)
             if (self.currentStreet == nil && self.displayStreet == nil) {
                 self.currentStreet = street!
                 self.displayStreet = self.currentStreet
                 self.streetNameLabel.text = self.displayStreet!
                 self.loadWebViewContent(search: self.displayStreet!)
-            } else if (self.displayStreet != self.currentStreet) {
+            } else if (self.currentStreet != self.displayStreet && !self.refreshButtonDisplayed) {
                 self.showRefreshButton()
-            } else {
+            } else if (self.currentStreet == self.displayStreet && self.refreshButtonDisplayed) {
                 self.hideRefreshButton()
             }
             

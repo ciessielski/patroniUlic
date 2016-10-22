@@ -60,3 +60,79 @@ extension UIColor {
     }
 }
 
+extension String {
+    
+    func nominativusFrom(genetivus: String) -> String {
+        
+        if (genetivus.contains(" ")) {
+            
+            let nom = genetivus.replacingOccurrences(of: " ", with: "_") as NSString
+            
+            var name = nom.substring(to: nom.range(of: "_").location) as NSString
+            var surname = nom.substring(from: nom.range(of: "_").location + 1) as NSString
+            
+            if (name.hasSuffix("wła")) {
+                name = name.replacingOccurrences(of: "wła", with: "weł") as NSString
+            }
+            
+            if (name.hasSuffix("ka")) {
+                name = name.replacingOccurrences(of: "ka", with: "ek") as NSString
+            }
+            
+            if (name.hasSuffix("ra")) {
+                name = name.replacingOccurrences(of: "ra", with: "er") as NSString
+            }
+            
+            if (name.hasSuffix("a")) {
+                name = name.substring(to: name.length - 1) as NSString
+            }
+            
+            if (name.hasSuffix("y") || name.hasSuffix("i") ) {
+                name = name.substring(to: name.length - 1).appending("a") as NSString
+            }
+            
+            if (name.hasSuffix("ego")) {
+                name = name.replacingOccurrences(of: "iego", with: "") as NSString
+                name = name.replacingOccurrences(of: "ego", with: "y") as NSString
+            }
+            
+            if (surname.hasSuffix("ego")) {
+                surname = surname.replacingOccurrences(of: "iego", with: "i") as NSString
+                surname = surname.replacingOccurrences(of: "ego", with: "y") as NSString
+            }
+            
+            if (surname.hasPrefix("Pawła")) {
+                surname = surname.replacingOccurrences(of: "Pawła", with: "Paweł") as NSString
+            }
+            
+            if (surname.hasSuffix("ca")) {
+                surname = surname.replacingOccurrences(of: "ca", with: "ec") as NSString
+            }
+            
+            if (surname.hasSuffix("jki")) {
+                surname = surname.replacingOccurrences(of: "jki", with: "jko") as NSString
+            }
+            
+            if (surname.hasSuffix("a")) {
+                surname = surname.substring(to: surname.length - 1) as NSString
+            } else if (surname.hasSuffix("y")) {
+                surname = surname.substring(to: surname.length - 1).appending("a") as NSString
+            }
+            
+            if (surname.contains("wskiej")) {
+                surname = surname.replacingOccurrences(of: "wskiej", with: "wska") as NSString
+            }
+            
+            if (surname.hasSuffix("iej")) {
+                surname = surname.replacingOccurrences(of: "iej", with: "a") as NSString
+            }
+            
+            if (surname.hasSuffix("ej")) {
+                surname = surname.replacingOccurrences(of: "ej", with: "a") as NSString
+            }
+            
+            return (name as String) + "_" + (surname as String)
+        } else { return ""}
+    }
+}
+
