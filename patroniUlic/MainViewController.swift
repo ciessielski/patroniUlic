@@ -131,11 +131,11 @@ class MainViewController: UIViewController, UIWebViewDelegate {
         var url = NSURL (string: wikiSearch)
         
         if (wikiSearch == "http://pl.wikipedia.org/wiki/") {
-            var gSearch = search.replacingOccurrences(of: " ", with: "%20")
+            var gSearch = search.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
             gSearch = "https://www.google.pl/#q=" + gSearch
             url = NSURL (string: gSearch)
         }
-        
+                
         if (url != nil) {
             let requestObj = NSURLRequest(url: url as! URL)
             webView.loadRequest(requestObj as URLRequest)
@@ -148,7 +148,7 @@ class MainViewController: UIViewController, UIWebViewDelegate {
     
     func test() {
         
-        let testNames = ["Adama Mickiewicza", "Elizy Orzeszkowej", "Andrzeja Wajdy", "Jana Pawła II", "Maurycego Mochnackiego", "Gabrieli Zapolskiej", "Franciszka Bohomolca", "Stanisława Tołpy", "Stefana Jaracza", "Józefa Supińskiego", "Marii Curie-Skłodowskiej", "Marii Skołodowskiej-Curie", "Jana Matejki", "Plac Zbawiciela", "św. Mikołaja", "św. Maksymiliana Kolbego", "Plac Konstytucji", "Aleja Karkonowska"]
+        let testNames = ["Adama Mickiewicza", "Elizy Orzeszkowej", "Andrzeja Wajdy", "Jana Pawła II", "Maurycego Mochnackiego", "Gabrieli Zapolskiej", "Franciszka Bohomolca", "Stanisława Tołpy", "Stefana Jaracza", "Józefa Supińskiego", "Marii Curie-Skłodowskiej", "Marii Skołodowskiej-Curie", "Jana Matejki", "Plac Zbawiciela", "św. Mikołaja", "św. Maksymiliana Kolbego", "Plac Konstytucji", "Aleja Karkonowska", "Antoniego Józefa Madalińskiego"]
         
         for name in testNames {
             print(String().nominativusFrom(genetivus: name))

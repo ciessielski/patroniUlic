@@ -76,11 +76,30 @@ extension String {
         if (nom.hasPrefix("św._")) {
             nom = nom.replacingOccurrences(of: "św._", with: "") as NSString
         }
+        
+        if (nom.hasPrefix("gen._")) {
+            nom = nom.replacingOccurrences(of: "gen._", with: "") as NSString
+        }
+        
+        if (nom.hasPrefix("płk._")) {
+            nom = nom.replacingOccurrences(of: "płk._", with: "") as NSString
+        }
 
         if (nom.contains("_")) {
             
-            var name = nom.substring(to: nom.range(of: "_").location) as NSString
-            var surname = nom.substring(from: nom.range(of: "_").location + 1) as NSString
+            var components = nom.components(separatedBy: "_")
+            var name: NSString = components[0] as NSString
+            var middlename: NSString = ""
+            var surname: NSString = ""
+            
+            if (components.count == 3) {
+                middlename = components[1] as NSString
+                surname = components[2] as NSString
+            } else if (components.count == 2) {
+                surname = components[1] as NSString
+            } else {
+                print("WHAT A NAME!?")
+            }
             
             if (name.hasSuffix("wła")) {
                 name = name.replacingOccurrences(of: "wła", with: "weł") as NSString
@@ -104,8 +123,34 @@ extension String {
             
             if (name.hasSuffix("ego")) {
                 name = name.replacingOccurrences(of: "olbego", with: "olbe") as NSString
-                name = name.replacingOccurrences(of: "iego", with: "") as NSString
+                name = name.replacingOccurrences(of: "iego", with: "i") as NSString
                 name = name.replacingOccurrences(of: "ego", with: "y") as NSString
+            }
+            
+            if (middlename.hasSuffix("wła")) {
+                middlename = middlename.replacingOccurrences(of: "wła", with: "weł") as NSString
+            }
+            
+            if (middlename.hasSuffix("ka")) {
+                middlename = middlename.replacingOccurrences(of: "ka", with: "ek") as NSString
+            }
+            
+            if (middlename.hasSuffix("ra")) {
+                middlename = middlename.replacingOccurrences(of: "ra", with: "er") as NSString
+            }
+            
+            if (middlename.hasSuffix("a")) {
+                middlename = middlename.substring(to: middlename.length - 1) as NSString
+            }
+            
+            if (middlename.hasSuffix("y") || middlename.hasSuffix("i") ) {
+                middlename = middlename.substring(to: middlename.length - 1).appending("a") as NSString
+            }
+            
+            if (middlename.hasSuffix("ego")) {
+                middlename = middlename.replacingOccurrences(of: "olbego", with: "olbe") as NSString
+                middlename = middlename.replacingOccurrences(of: "iego", with: "i") as NSString
+                middlename = middlename.replacingOccurrences(of: "ego", with: "y") as NSString
             }
             
             if (surname.hasSuffix("olbego")) {
@@ -115,10 +160,6 @@ extension String {
             if (surname.hasSuffix("ego")) {
                 surname = surname.replacingOccurrences(of: "iego", with: "i") as NSString
                 surname = surname.replacingOccurrences(of: "ego", with: "y") as NSString
-            }
-            
-            if (surname.hasPrefix("Pawła")) {
-                surname = surname.replacingOccurrences(of: "Pawła", with: "Paweł") as NSString
             }
             
             if (surname.hasSuffix("ca")) {
@@ -147,7 +188,13 @@ extension String {
                 surname = surname.replacingOccurrences(of: "ej", with: "a") as NSString
             }
             
-            return (name as String) + "_" + (surname as String)
+            var output = (name as String) + "_" + (middlename as String) + "_" + (surname as String)
+            
+            if (output == "Antoni_Józef_Madaliński" ) {
+                output = "Antoni_Madaliński"
+            }
+            
+            return output
         } else { return ""}
     }
 }
