@@ -135,7 +135,9 @@ class MainViewController: UIViewController, UIWebViewDelegate {
             gSearch = "https://www.google.pl/#q=" + gSearch
             url = NSURL (string: gSearch)
         }
-                
+        
+//        print(search) //uncomment for testing
+//        print(url) //uncomment for testing
         if (url != nil) {
             let requestObj = NSURLRequest(url: url as! URL)
             webView.loadRequest(requestObj as URLRequest)
@@ -148,7 +150,7 @@ class MainViewController: UIViewController, UIWebViewDelegate {
     
     func test() {
         
-        let testNames = ["Adama Mickiewicza", "Elizy Orzeszkowej", "Andrzeja Wajdy", "Jana Pawła II", "Maurycego Mochnackiego", "Gabrieli Zapolskiej", "Franciszka Bohomolca", "Stanisława Tołpy", "Stefana Jaracza", "Józefa Supińskiego", "Marii Curie-Skłodowskiej", "Marii Skołodowskiej-Curie", "Jana Matejki", "Plac Zbawiciela", "św. Mikołaja", "św. Maksymiliana Kolbego", "Plac Konstytucji", "Aleja Karkonowska", "Antoniego Józefa Madalińskiego"]
+        let testNames = ["Tytusa Chałubińskiego", "św. Maksymiliana Kolbego", "Plac Konstytucji", "Aleja Karkonowska", "Antoniego Józefa Madalińskiego", "Gabriela Narutowicza", "Emilii Plater", "Żwirki i Wigury"]
         
         for name in testNames {
             print(String().nominativusFrom(genetivus: name))

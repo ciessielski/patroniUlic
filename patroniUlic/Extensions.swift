@@ -59,6 +59,8 @@ extension UIColor {
     }
 }
 
+let exceptions: [String] = ["Żwirki_i_Wigury", "Piotra i Pawła"]
+
 extension String {
     
     func nominativusFrom(genetivus: String) -> String {
@@ -85,7 +87,7 @@ extension String {
             nom = nom.replacingOccurrences(of: "płk._", with: "") as NSString
         }
 
-        if (nom.contains("_")) {
+        if (nom.contains("_") && !exceptions.contains(nom as String)) {
             
             var components = nom.components(separatedBy: "_")
             var name: NSString = components[0] as NSString

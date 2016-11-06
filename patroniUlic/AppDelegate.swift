@@ -10,6 +10,7 @@ import UIKit
 import HockeySDK
 import GoogleMobileAds
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -27,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         BITHockeyManager.shared().authenticator.authenticateInstallation() // This line is obsolete in the crash only builds
         
         GADMobileAds.configure(withApplicationID: "ca-app-pub-2539884439806042~4782320618")
+        
+        ACTAutomatedUsageTracker.enableAutomatedUsageReporting(withConversionID: "997285029")
+        ACTConversionReporter.report(withConversionID: "997285029", label: "GcYkCLG6tWsQpbnF2wM", value: "0.10", isRepeatable: false)
 
         return true
     }
